@@ -1,0 +1,8 @@
+curl -o test.zip -LJO https://github.com/adityamavle/Datasets/blob/main/test.zip?raw=true
+
+git clone https://github.com/ultralytics/yolov5.git
+
+
+curl -o data/coco128.yaml https://raw.githubusercontent.com/adityamavle/Datasets/main/coco128.yaml
+
+python yolov5/detect.py --source test/test --weights trained/last.pt --img 416 --save-txt --save-conf --conf-thres 0.50
